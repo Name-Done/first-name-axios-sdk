@@ -71,7 +71,7 @@ export const EmailDomainNameApiAxiosParamCreator = function (configuration?: Con
         /**
          * 
          * @summary Get a list of email domain names
-         * @param {string} name Name query parameter
+         * @param {string} name Email domain name query parameter
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -118,7 +118,7 @@ export const EmailDomainNameApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Get a list of email domain names
-         * @param {string} name Name query parameter
+         * @param {string} name Email domain name query parameter
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -139,7 +139,7 @@ export const EmailDomainNameApiFactory = function (configuration?: Configuration
         /**
          * 
          * @summary Get a list of email domain names
-         * @param {string} name Name query parameter
+         * @param {string} name Email domain name query parameter
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -159,7 +159,7 @@ export class EmailDomainNameApi extends BaseAPI {
     /**
      * 
      * @summary Get a list of email domain names
-     * @param {string} name Name query parameter
+     * @param {string} name Email domain name query parameter
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof EmailDomainNameApi
