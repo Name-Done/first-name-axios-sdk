@@ -170,6 +170,7 @@ export class EmailDomainNameApi extends BaseAPI {
 }
 
 
+
 /**
  * FamilyNameApi - axios parameter creator
  * @export
@@ -278,6 +279,7 @@ export class FamilyNameApi extends BaseAPI {
 }
 
 
+
 /**
  * GivenNameApi - axios parameter creator
  * @export
@@ -288,11 +290,11 @@ export const GivenNameApiAxiosParamCreator = function (configuration?: Configura
          * 
          * @summary Get a list of given names
          * @param {string} name Name query parameter
-         * @param {'male' | 'female'} [gender] Gender query parameter
+         * @param {GetGivenNamesGenderEnum} [gender] Gender query parameter
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getGivenNames: async (name: string, gender?: 'male' | 'female', options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getGivenNames: async (name: string, gender?: GetGivenNamesGenderEnum, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'name' is not null or undefined
             assertParamExists('getGivenNames', 'name', name)
             const localVarPath = `/name/given`;
@@ -340,11 +342,11 @@ export const GivenNameApiFp = function(configuration?: Configuration) {
          * 
          * @summary Get a list of given names
          * @param {string} name Name query parameter
-         * @param {'male' | 'female'} [gender] Gender query parameter
+         * @param {GetGivenNamesGenderEnum} [gender] Gender query parameter
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getGivenNames(name: string, gender?: 'male' | 'female', options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<NameResponseDto>> {
+        async getGivenNames(name: string, gender?: GetGivenNamesGenderEnum, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<NameResponseDto>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getGivenNames(name, gender, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -362,11 +364,11 @@ export const GivenNameApiFactory = function (configuration?: Configuration, base
          * 
          * @summary Get a list of given names
          * @param {string} name Name query parameter
-         * @param {'male' | 'female'} [gender] Gender query parameter
+         * @param {GetGivenNamesGenderEnum} [gender] Gender query parameter
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getGivenNames(name: string, gender?: 'male' | 'female', options?: any): AxiosPromise<NameResponseDto> {
+        getGivenNames(name: string, gender?: GetGivenNamesGenderEnum, options?: any): AxiosPromise<NameResponseDto> {
             return localVarFp.getGivenNames(name, gender, options).then((request) => request(axios, basePath));
         },
     };
@@ -383,15 +385,24 @@ export class GivenNameApi extends BaseAPI {
      * 
      * @summary Get a list of given names
      * @param {string} name Name query parameter
-     * @param {'male' | 'female'} [gender] Gender query parameter
+     * @param {GetGivenNamesGenderEnum} [gender] Gender query parameter
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof GivenNameApi
      */
-    public getGivenNames(name: string, gender?: 'male' | 'female', options?: AxiosRequestConfig) {
+    public getGivenNames(name: string, gender?: GetGivenNamesGenderEnum, options?: AxiosRequestConfig) {
         return GivenNameApiFp(this.configuration).getGivenNames(name, gender, options).then((request) => request(this.axios, this.basePath));
     }
 }
+
+/**
+ * @export
+ */
+export const GetGivenNamesGenderEnum = {
+    Male: 'male',
+    Female: 'female'
+} as const;
+export type GetGivenNamesGenderEnum = typeof GetGivenNamesGenderEnum[keyof typeof GetGivenNamesGenderEnum];
 
 
 /**
@@ -500,5 +511,6 @@ export class TopLevelDomainNameApi extends BaseAPI {
         return TopLevelDomainNameApiFp(this.configuration).getTopLevelDomainNames(name, options).then((request) => request(this.axios, this.basePath));
     }
 }
+
 
 
