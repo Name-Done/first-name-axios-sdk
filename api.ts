@@ -71,13 +71,11 @@ export const DomainNameApiAxiosParamCreator = function (configuration?: Configur
         /**
          * 
          * @summary Get a list of domain names
-         * @param {string} name Domain name query parameter
+         * @param {string} [name] Domain name query parameter
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getDomainNames: async (name: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'name' is not null or undefined
-            assertParamExists('getDomainNames', 'name', name)
+        getDomainNames: async (name?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/name/domain`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -118,11 +116,11 @@ export const DomainNameApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Get a list of domain names
-         * @param {string} name Domain name query parameter
+         * @param {string} [name] Domain name query parameter
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getDomainNames(name: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<NameResponseDto>> {
+        async getDomainNames(name?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<NameResponseDto>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getDomainNames(name, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -139,11 +137,11 @@ export const DomainNameApiFactory = function (configuration?: Configuration, bas
         /**
          * 
          * @summary Get a list of domain names
-         * @param {string} name Domain name query parameter
+         * @param {string} [name] Domain name query parameter
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getDomainNames(name: string, options?: any): AxiosPromise<NameResponseDto> {
+        getDomainNames(name?: string, options?: any): AxiosPromise<NameResponseDto> {
             return localVarFp.getDomainNames(name, options).then((request) => request(axios, basePath));
         },
     };
@@ -159,12 +157,12 @@ export class DomainNameApi extends BaseAPI {
     /**
      * 
      * @summary Get a list of domain names
-     * @param {string} name Domain name query parameter
+     * @param {string} [name] Domain name query parameter
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DomainNameApi
      */
-    public getDomainNames(name: string, options?: AxiosRequestConfig) {
+    public getDomainNames(name?: string, options?: AxiosRequestConfig) {
         return DomainNameApiFp(this.configuration).getDomainNames(name, options).then((request) => request(this.axios, this.basePath));
     }
 }
@@ -289,13 +287,11 @@ export const FamilyNameApiAxiosParamCreator = function (configuration?: Configur
         /**
          * 
          * @summary Get a list of family names
-         * @param {string} name Name query parameter
+         * @param {string} [name] Name query parameter
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getFamilyNames: async (name: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'name' is not null or undefined
-            assertParamExists('getFamilyNames', 'name', name)
+        getFamilyNames: async (name?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/name/family`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -336,11 +332,11 @@ export const FamilyNameApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Get a list of family names
-         * @param {string} name Name query parameter
+         * @param {string} [name] Name query parameter
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getFamilyNames(name: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<NameResponseDto>> {
+        async getFamilyNames(name?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<NameResponseDto>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getFamilyNames(name, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -357,11 +353,11 @@ export const FamilyNameApiFactory = function (configuration?: Configuration, bas
         /**
          * 
          * @summary Get a list of family names
-         * @param {string} name Name query parameter
+         * @param {string} [name] Name query parameter
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getFamilyNames(name: string, options?: any): AxiosPromise<NameResponseDto> {
+        getFamilyNames(name?: string, options?: any): AxiosPromise<NameResponseDto> {
             return localVarFp.getFamilyNames(name, options).then((request) => request(axios, basePath));
         },
     };
@@ -377,12 +373,12 @@ export class FamilyNameApi extends BaseAPI {
     /**
      * 
      * @summary Get a list of family names
-     * @param {string} name Name query parameter
+     * @param {string} [name] Name query parameter
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof FamilyNameApi
      */
-    public getFamilyNames(name: string, options?: AxiosRequestConfig) {
+    public getFamilyNames(name?: string, options?: AxiosRequestConfig) {
         return FamilyNameApiFp(this.configuration).getFamilyNames(name, options).then((request) => request(this.axios, this.basePath));
     }
 }
@@ -398,13 +394,11 @@ export const GenderApiAxiosParamCreator = function (configuration?: Configuratio
         /**
          * 
          * @summary Get a list of genders
-         * @param {string} name Name query parameter
+         * @param {string} [name] Name query parameter
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getGenders: async (name: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'name' is not null or undefined
-            assertParamExists('getGenders', 'name', name)
+        getGenders: async (name?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/name/gender`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -445,11 +439,11 @@ export const GenderApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Get a list of genders
-         * @param {string} name Name query parameter
+         * @param {string} [name] Name query parameter
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getGenders(name: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<NameResponseDto>> {
+        async getGenders(name?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<NameResponseDto>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getGenders(name, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -466,11 +460,11 @@ export const GenderApiFactory = function (configuration?: Configuration, basePat
         /**
          * 
          * @summary Get a list of genders
-         * @param {string} name Name query parameter
+         * @param {string} [name] Name query parameter
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getGenders(name: string, options?: any): AxiosPromise<NameResponseDto> {
+        getGenders(name?: string, options?: any): AxiosPromise<NameResponseDto> {
             return localVarFp.getGenders(name, options).then((request) => request(axios, basePath));
         },
     };
@@ -486,12 +480,12 @@ export class GenderApi extends BaseAPI {
     /**
      * 
      * @summary Get a list of genders
-     * @param {string} name Name query parameter
+     * @param {string} [name] Name query parameter
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof GenderApi
      */
-    public getGenders(name: string, options?: AxiosRequestConfig) {
+    public getGenders(name?: string, options?: AxiosRequestConfig) {
         return GenderApiFp(this.configuration).getGenders(name, options).then((request) => request(this.axios, this.basePath));
     }
 }
@@ -507,14 +501,12 @@ export const GivenNameApiAxiosParamCreator = function (configuration?: Configura
         /**
          * 
          * @summary Get a list of given names
-         * @param {string} name Name query parameter
-         * @param {GetGivenNamesGenderEnum} [gender] Gender query parameter
+         * @param {string} [name] Name query parameter
+         * @param {string} [gender] Gender query parameter
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getGivenNames: async (name: string, gender?: GetGivenNamesGenderEnum, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'name' is not null or undefined
-            assertParamExists('getGivenNames', 'name', name)
+        getGivenNames: async (name?: string, gender?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/name/given`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -559,12 +551,12 @@ export const GivenNameApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Get a list of given names
-         * @param {string} name Name query parameter
-         * @param {GetGivenNamesGenderEnum} [gender] Gender query parameter
+         * @param {string} [name] Name query parameter
+         * @param {string} [gender] Gender query parameter
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getGivenNames(name: string, gender?: GetGivenNamesGenderEnum, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<NameResponseDto>> {
+        async getGivenNames(name?: string, gender?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<NameResponseDto>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getGivenNames(name, gender, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -581,12 +573,12 @@ export const GivenNameApiFactory = function (configuration?: Configuration, base
         /**
          * 
          * @summary Get a list of given names
-         * @param {string} name Name query parameter
-         * @param {GetGivenNamesGenderEnum} [gender] Gender query parameter
+         * @param {string} [name] Name query parameter
+         * @param {string} [gender] Gender query parameter
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getGivenNames(name: string, gender?: GetGivenNamesGenderEnum, options?: any): AxiosPromise<NameResponseDto> {
+        getGivenNames(name?: string, gender?: string, options?: any): AxiosPromise<NameResponseDto> {
             return localVarFp.getGivenNames(name, gender, options).then((request) => request(axios, basePath));
         },
     };
@@ -602,25 +594,17 @@ export class GivenNameApi extends BaseAPI {
     /**
      * 
      * @summary Get a list of given names
-     * @param {string} name Name query parameter
-     * @param {GetGivenNamesGenderEnum} [gender] Gender query parameter
+     * @param {string} [name] Name query parameter
+     * @param {string} [gender] Gender query parameter
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof GivenNameApi
      */
-    public getGivenNames(name: string, gender?: GetGivenNamesGenderEnum, options?: AxiosRequestConfig) {
+    public getGivenNames(name?: string, gender?: string, options?: AxiosRequestConfig) {
         return GivenNameApiFp(this.configuration).getGivenNames(name, gender, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
-/**
- * @export
- */
-export const GetGivenNamesGenderEnum = {
-    Male: 'male',
-    Female: 'female'
-} as const;
-export type GetGivenNamesGenderEnum = typeof GetGivenNamesGenderEnum[keyof typeof GetGivenNamesGenderEnum];
 
 
 /**
